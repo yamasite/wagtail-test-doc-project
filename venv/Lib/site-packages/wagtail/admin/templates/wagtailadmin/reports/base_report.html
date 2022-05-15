@@ -1,0 +1,34 @@
+{% extends "wagtailadmin/base.html" %}
+{% load i18n wagtailadmin_tags %}
+
+{% block titletag %}{{ title }}{% endblock %}
+
+{% block content %}
+    <header role="banner">
+        <div class="row nice-padding">
+            <div class="left">
+                <div class="col header-title">
+                    <h1 class="icon icon-{{ header_icon }}">{{ title }}{% if subtitle %} <span>{{ subtitle }}</span>{% endif %}</h1>
+                </div>
+            </div>
+            <div class="right">
+                {% block actions %}
+                    {% if view.list_export %}
+                        <div class="dropdown dropdown-button match-width">
+                            <a href="?export=xlsx" class="button bicolor icon icon-download">{% trans 'Download XLSX' %}</a>
+                            <div class="dropdown-toggle icon icon-arrow-down"></div>
+                            <ul>
+                                <li><a  class="button bicolor icon icon-download" href="?export=csv">{% trans 'Download CSV' %}</a></li>
+                            </ul>
+                        </div>
+                    {% endif %}
+                {% endblock %}
+            </div>
+        </div>
+    </header>
+
+    <div class="nice-padding">
+        {% block results %}
+        {% endblock %}
+    </div>
+{% endblock %}

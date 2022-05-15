@@ -1,0 +1,16 @@
+coderedcms==0.19.*
+wagtail-markdown
+Pygments
+wagtailmedia
+wagtail-modeltranslation
+drf_yasg
+
+
+# django_sendmail_backend enables sending email from your web host server.
+# Remove this if using a different email backend.
+django_sendmail_backend
+
+# To use with MariaDB or MySQL, uncomment the line below:
+#mysqlclient
+# To use with PostgreSQL, uncomment the line below:
+#psycopg2
